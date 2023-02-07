@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    color-scheme: dark;
+}
+
+.page {
+    background-image: linear-gradient(90deg, rgba(0, 0, 22,0.80) 35%, rgba(0, 0, 18,0.65) 100%),url(https://cloud-diyr52p88-hack-club-bot.vercel.app/020220312_124621.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  @apply h-screen flex flex-col justify-center items-center text-center text-white;
+}
