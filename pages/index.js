@@ -101,7 +101,7 @@ export default function App() {
           <Button
             bg={'#56ca53'}
             as="a"
-            href="mailto:sampoder@codeday.org"
+            href="mailto:ray@codeday.org"
             sx={{ borderRadius: 6, mx: 2, mb: 2, fontSize: 2 }}
           >
             Contact Us
