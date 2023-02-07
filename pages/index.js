@@ -3,14 +3,30 @@ import Lead from '../components/lead.mdx'
 import Follow from '../components/follow.mdx'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import {useState} from "react";
 
 export default function App() {
   const router = useRouter()
+    const [email, setEmail] = useState('')
+    const [name, setName] = useState('')
+    const register = () => {
+        fetch('api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                Name: name,
+                Email: email,
+            }),
+        }).then(res => {
+            res.status === 200 ? router.push('/?signedup=true') : console.log(res)
+        })
+    }
   return (
     <Box>
       {router.query.signedup && <Box bg={'#56ca53'} color={'white'} sx={{textAlign: 'center', py:2, fontWeight: 600, fontSize: 2}}>Succesfully signed up for CodeDay Singapore!</Box>}
       <Head>
-        <script src="https://embed.small.chat/TKM55CBL5C02UQJDS0MA.js" />
         <meta property="og:site_name" content="CodeDay" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link
@@ -42,7 +58,7 @@ export default function App() {
         />
         <meta name="msapplication-TileColor" content="#ff686b" />
         <meta name="theme-color" content="#ffffff" />
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CodeDay Singapore</title>
         <meta name="robots" content="index,follow" />
@@ -194,9 +210,6 @@ export default function App() {
           </Heading>
           <Box
             id="submit"
-            as="form"
-            method="POST"
-            action="https://airtable-forms-proxy.innovationcircuit.co/api/appD6mrDPbe6cLQeP/Registrations?redirect=https://codeday.sg?signedup=true"
             sx={{
               fontSize: 2,
               py: 0,
@@ -207,6 +220,7 @@ export default function App() {
             <Box sx={{}}>
               <small>Your Name</small>
               <Input
+                  onChange={e => setName(e.target.value)}
                 name="Name"
                 bg="white"
                 required
@@ -219,6 +233,7 @@ export default function App() {
             <Box>
               <small>Contact Email</small>
               <Input
+                    onChange={e => setEmail(e.target.value)}
                 bg="white"
                 name="Email"
                 required
@@ -229,6 +244,7 @@ export default function App() {
               />
             </Box>
             <Button
+                onClick={register}
               sx={{
                 justifyContent: 'left',
                 width: 'fit-content',
@@ -417,7 +433,7 @@ export default function App() {
       </Container>
       <Box bg="primary" color="white" py={3}>
         <Container variant="copy">
-          Copyright 2009 – 2022 CodeDay. A 501(c)(3) nonprofit. EIN: 26-4742589.
+          Copyright 2009 – 2023 CodeDay. A 501(c)(3) nonprofit. EIN: 26-4742589.
         </Container>
       </Box>
     </Box>
