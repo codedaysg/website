@@ -176,32 +176,32 @@ export default function App() {
           👏 Show off what you made.
         </Box>
         <Follow />
-        <Box
-          bg="snow"
-          p={2}
-          my={2}
-          mt={3}
-          sx={{ border: '1px solid', borderColor: 'sunken', borderRadius: 6 }}
-        >
-          💉 Attendees must have fully vaccinated status on TraceTogether.
-        </Box>
-        <Box
-          bg="snow"
-          p={2}
-          my={2}
-          sx={{ border: '1px solid', borderColor: 'sunken', borderRadius: 6 }}
-        >
-          😷 Masks must be worn throughout the event (N95 masks will be
-          provided).
-        </Box>
-        <Box
-          bg="snow"
-          p={2}
-          my={2}
-          sx={{ border: '1px solid', borderColor: 'sunken', borderRadius: 6 }}
-        >
-          🌡 Temperature checks will be performed at the venue.
-        </Box>
+        {/*<Box*/}
+        {/*  bg="snow"*/}
+        {/*  p={2}*/}
+        {/*  my={2}*/}
+        {/*  mt={3}*/}
+        {/*  sx={{ border: '1px solid', borderColor: 'sunken', borderRadius: 6 }}*/}
+        {/*>*/}
+        {/*  💉 Attendees must have fully vaccinated status on TraceTogether.*/}
+        {/*</Box>*/}
+        {/*<Box*/}
+        {/*  bg="snow"*/}
+        {/*  p={2}*/}
+        {/*  my={2}*/}
+        {/*  sx={{ border: '1px solid', borderColor: 'sunken', borderRadius: 6 }}*/}
+        {/*>*/}
+        {/*  😷 Masks must be worn throughout the event (N95 masks will be*/}
+        {/*  provided).*/}
+        {/*</Box>*/}
+        {/*<Box*/}
+        {/*  bg="snow"*/}
+        {/*  p={2}*/}
+        {/*  my={2}*/}
+        {/*  sx={{ border: '1px solid', borderColor: 'sunken', borderRadius: 6 }}*/}
+        {/*>*/}
+        {/*  🌡 Temperature checks will be performed at the venue.*/}
+        {/*</Box>*/}
       </Container>
       <Box bg="primary" color="white" py={4}>
         <Container variant="copy">
