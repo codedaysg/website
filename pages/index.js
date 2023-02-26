@@ -98,7 +98,7 @@ export default function App() {
               textTransform: 'uppercase'
             }}
           >
-            March 12th, 12pm to 9pm
+            May 21 2023, 9am to 10pm
           </Heading>
           <Heading
             color="white"
